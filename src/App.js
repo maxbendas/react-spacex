@@ -29,7 +29,7 @@ class App extends Component {
             })
             .then(data => data.find(item => item.name === this.state.rocket))
             .then(rocketFeatures => {
-                this.setState({rocketFeatures})
+                this.setState({rocketFeatures}, console.log(this.state.rocketFeatures))
             })
     }
 
@@ -43,7 +43,8 @@ this.setState({
             <>
                 <Header rockets={this.state.rockets} changeRocket={this.changeRocket}/>
                 <Main rocket={this.state.rocket}/>
-                <Features/>
+                <Features rocket={this.state.rocket}
+                          rocketFeatures={this.state.rocketFeatures}/>
                 <Footer/>
                 {/*<Calendar/>*/}
                 {/*<Details/>*/}

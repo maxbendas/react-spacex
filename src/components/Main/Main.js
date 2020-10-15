@@ -10,7 +10,7 @@ const video = {
 }
 
 const Main = ({rocket}) => {
-    return (
+        return (
         <section className="main">
             <h1 className="title">
                 {rocket}

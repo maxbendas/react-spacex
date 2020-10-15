@@ -1,12 +1,27 @@
 import React from 'react';
-import RelaxWrapper from 'react-rellax-wrapper'
+import RellaxWrapper from 'react-rellax-wrapper'
 import './features.css';
 
-const Features = () => {
+const photo = {
+    'Falcon 1': 'falcon-1',
+    'Falcon 9': 'falcon-9',
+    'Falcon Heavy': 'falcon-heavy',
+    other: 'starship'
+
+}
+
+
+
+const Features = ({rocket, rocketFeatures}) => {
+    const {name, height, diameter } = {...rocketFeatures}
+    const {meters:hm, feet:hf} = {...height}
+    const {meters:dm, feet:df} = {...diameter}
+
+
     return (
         <section className="features">
             <h2 className="features-title">
-                Falcon 1 <br/>Overview
+                {name} <br/>Overview
             </h2>
             <div className="overview">
 
@@ -17,11 +32,11 @@ const Features = () => {
                     <thead>
                     <tr>
                         <td className="table-column">HEIGHT</td>
-                        <td className="table-column">22.25 m / 73 ft</td>
+                        <td className="table-column">{hm} m / {hf} ft</td>
                     </tr>
                     <tr>
                         <td className="table-column">DIAMETER</td>
-                        <td className="table-column">1.68 m / 5.5 ft</td>
+                        <td className="table-column">{dm} m / {df} ft</td>
                     </tr>
                     <tr>
                         <td className="table-column">MASS</td>
@@ -33,13 +48,15 @@ const Features = () => {
                     </tr>
                     </thead>
                 </table>
-                <RelaxWrapper speed={14}>
+                <RellaxWrapper speed={14}>
                 <img
-                    src="img/falcon-1.png"
+                    src={`./img/${photo.hasOwnProperty(rocket)?
+                        photo[rocket]:
+                        photo.other}.png`}
                     alt="rocket"
                     className="rocket"
                 />
-                </RelaxWrapper>
+                </RellaxWrapper>
                 <article>
                     <h3 className="features-subtitle">DESCRIPTION</h3>
                     <p className="features-text">
