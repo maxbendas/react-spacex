@@ -1,8 +1,11 @@
 import React from 'react';
 import './details.css'
+import Main from "../Main/Main";
 
 const Details = () => {
     return (
+        <>
+        <Main/>
         <main className="details">
             <div className="container">
                 <div className="details-row">
@@ -22,6 +25,7 @@ const Details = () => {
             </div>
             <a href="calendar.html" className="button button-back">go back</a>
         </main>
+            </>
     );
 };
 
