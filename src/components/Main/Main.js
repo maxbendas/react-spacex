@@ -9,11 +9,11 @@ const video = {
 
 }
 
-const Main = ({rocket}) => {
+const Main = ({rocket, name}) => {
     return (
         <section className="main">
             <h1 className="title">
-                {rocket ? rocket:'Calendar SpaceX' }
+                {name || rocket }
             </h1>
             {rocket && <div className="video-container">
                 <video

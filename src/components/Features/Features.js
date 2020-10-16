@@ -15,7 +15,7 @@ const Features = ({name, height, diameter, mass, payload_weights: payloadWeights
 
     return (
         <>
-
+            <Main rocket={name}/>
         <section className="features">
             <h2 className="features-title">
                 {name} <br/>Overview
